@@ -34,7 +34,7 @@
           <a href="{{ route('admin.appointments') }}" class="nav-link {{ request()->is('admin/appointments*') ? 'active' : '' }}">
             <i class="nav-icon fas fa-calendar-alt"></i>
             <p>
-              Compromssos
+              Compromissos
             </p>
           </a>
         </li>
