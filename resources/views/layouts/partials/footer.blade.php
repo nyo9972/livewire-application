@@ -4,5 +4,5 @@
 	  <!-- Anything you want -->
 	</div>
 	<!-- Default to the left -->
-	<strong>Copyright &copy; {{ date('Y') }} <a href="https://youtube.com/clovon" target="_blank">Clovon</a>.</strong> All rights reserved.
+	<strong>Copyright &copy; {{ date('Y') }} <a href="https://matheuslima.dev.br/" target="_blank">Matheus</a>.</strong> Todos os direitos reservados.
 </footer>

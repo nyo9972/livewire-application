@@ -4,7 +4,7 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="text-blue-600 bi bi-dot" viewBox="0 0 16 16">
                 <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" />
             </svg>
-            <span>Updating live</span>
+            <span>Atualização em tempo real</span>
         </div>
         <div class="flex items-center mr-6 md:mr-20 lg:mr-20">
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="text-red-500 bi bi-youtube" viewBox="0 0 16 16">
@@ -21,7 +21,7 @@
     <div class="flex flex-col items-center justify-center -mt-12">
         <div class="flex flex-col items-center justify-center">
             <img src="https://yt3.ggpht.com/ytc/AAUvwnhQStkaJSFrZmeqrKRU5cgY4cnVTtPFg4iCRC3q=s900-c-k-c0x00ffffff-no-rj" class="w-20 h-20 rounded-full" />
-            <h2 class="mt-2 text-xl font-semibold">Clovon</h2>
+            <h2 class="mt-2 text-xl font-semibold">Matheus Lima</h2>
         </div>
         <div class="flex flex-col items-center mt-16">
             <div wire:poll="fetchData">
@@ -29,7 +29,7 @@
                     <span class="text-6xl font-semibold">{{ $recentSubscribers }}</span>
                 </div>
             </div>
-            <span class="mt-3 text-xl text-gray-700">Subscribers</span>
+            <span class="mt-3 text-xl text-gray-700">Inscritos</span>
         </div>
     </div>
 

@@ -5,12 +5,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0 text-dark">Appointments</h1>
+                    <h1 class="m-0 text-dark">Compromissos</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-                        <li class="breadcrumb-item active">Appointments</li>
+                        <li class="breadcrumb-item active">Compromissos</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -26,40 +26,40 @@
                     <div class="d-flex justify-content-between mb-2">
                         <div>
                             <a href="{{ route('admin.appointments.create') }}">
-                                <button class="btn btn-primary"><i class="fa fa-plus-circle mr-1"></i> Add New Appointment</button>
+                                <button class="btn btn-primary"><i class="fa fa-plus-circle mr-1"></i> Adicionar novo compromiso</button>
                             </a>
 
                             @if ($selectedRows)
                             <div class="btn-group ml-2">
-                                <button type="button" class="btn btn-default">Bulk Actions</button>
+                                <button type="button" class="btn btn-default">Ações em massa</button>
                                 <button type="button" class="btn btn-default dropdown-toggle dropdown-icon" data-toggle="dropdown">
-                                    <span class="sr-only">Toggle Dropdown</span>
+                                    <span class="sr-only">Alternar lista suspensa</span>
                                 </button>
                                 <div class="dropdown-menu" role="menu">
-                                    <a wire:click.prevent="deleteSelectedRows" class="dropdown-item" href="#">Delete Selected</a>
-                                    <a wire:click.prevent="markAllAsScheduled" class="dropdown-item" href="#">Mark as Scheduled</a>
-                                    <a wire:click.prevent="markAllAsClosed" class="dropdown-item" href="#">Mark as Closed</a>
-                                    <a wire:click.prevent="export" class="dropdown-item" href="#">Export</a>
+                                    <a wire:click.prevent="deleteSelectedRows" class="dropdown-item" href="#">Apagar selecionados</a>
+                                    <a wire:click.prevent="markAllAsScheduled" class="dropdown-item" href="#">Marcar como agendado</a>
+                                    <a wire:click.prevent="markAllAsClosed" class="dropdown-item" href="#">Marcar como fechado</a>
+                                    <a wire:click.prevent="export" class="dropdown-item" href="#">Exportar</a>
                                 </div>
                             </div>
 
-                            <span class="ml-2">selected {{ count($selectedRows) }} {{ Str::plural('appointment', count($selectedRows)) }}</span>
+                            <span class="ml-2">Selecionado {{ count($selectedRows) }} {{ Str::plural('appointment', count($selectedRows)) }}</span>
                             @endif
 
                         </div>
                         <div class="btn-group">
                             <button wire:click="filterAppointmentsByStatus" type="button" class="btn {{ is_null($status) ? 'btn-secondary' : 'btn-default' }}">
-                                <span class="mr-1">All</span>
+                                <span class="mr-1">Todos</span>
                                 <span class="badge badge-pill badge-info">{{ $appointmentsCount }}</span>
                             </button>
 
                             <button wire:click="filterAppointmentsByStatus('scheduled')" type="button" class="btn {{ ($status === 'scheduled') ? 'btn-secondary' : 'btn-default' }}">
-                                <span class="mr-1">Scheduled</span>
+                                <span class="mr-1">Agendados</span>
                                 <span class="badge badge-pill badge-primary">{{ $scheduledAppointmentsCount }}</span>
                             </button>
 
                             <button wire:click="filterAppointmentsByStatus('closed')" type="button" class="btn {{ ($status === 'closed') ? 'btn-secondary' : 'btn-default' }}">
-                                <span class="mr-1">Closed</span>
+                                <span class="mr-1">Fechados</span>
                                 <span class="badge badge-pill badge-success">{{ $closedAppointmentsCount }}</span>
                             </button>
                         </div>
@@ -77,11 +77,11 @@
                                             </div>
                                         </th>
                                         <th scope="col">#</th>
-                                        <th scope="col">Client Name</th>
-                                        <th scope="col">Date</th>
-                                        <th scope="col">Time</th>
+                                        <th scope="col">Nome do cliente</th>
+                                        <th scope="col">Data</th>
+                                        <th scope="col">Hora</th>
                                         <th scope="col">Status</th>
-                                        <th scope="col">Options</th>
+                                        <th scope="col">Opções</th>
                                     </tr>
                                 </thead>
                                 <tbody wire:sortable="updateAppointmentOrder">

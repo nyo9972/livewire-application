@@ -34,7 +34,7 @@ class ListAppointments extends AdminComponent
 
 		$appointment->delete();
 
-		$this->dispatchBrowserEvent('deleted', ['message' => 'Appointment deleted successfully!']);
+		$this->dispatchBrowserEvent('deleted', ['message' => 'Compromisso excluído com sucesso!']);
 	}
 
 	public function filterAppointmentsByStatus($status = null)
@@ -69,7 +69,7 @@ class ListAppointments extends AdminComponent
 	{
 		Appointment::whereIn('id', $this->selectedRows)->update(['status' => Appointment::STATUS_SCHEDULED]);
 
-		$this->dispatchBrowserEvent('updated', ['message' => 'Appointments marked as scheduled']);
+		$this->dispatchBrowserEvent('updated', ['message' => 'Compromissos marcados como agendados']);
 
 		$this->reset(['selectPageRows', 'selectedRows']);
 	}
@@ -78,7 +78,7 @@ class ListAppointments extends AdminComponent
 	{
 		Appointment::whereIn('id', $this->selectedRows)->update(['status' => Appointment::STATUS_CLOSED]);
 
-		$this->dispatchBrowserEvent('updated', ['message' => 'Appointments marked as closed.']);
+		$this->dispatchBrowserEvent('updated', ['message' => 'Agendamentos marcados como encerrados.']);
 
 		$this->reset(['selectPageRows', 'selectedRows']);
 	}
@@ -87,7 +87,7 @@ class ListAppointments extends AdminComponent
 	{
 		Appointment::whereIn('id', $this->selectedRows)->delete();
 
-		$this->dispatchBrowserEvent('deleted', ['message' => 'All selected appointment got deleted.']);
+		$this->dispatchBrowserEvent('deleted', ['message' => 'Todos os compromissos selecionados foram excluídos.']);
 
 		$this->reset(['selectPageRows', 'selectedRows']);
 	}
@@ -103,7 +103,7 @@ class ListAppointments extends AdminComponent
             Appointment::find($item['value'])->update(['order_position' => $item['order']]);
         }
 
-        $this->dispatchBrowserEvent('updated', ['message' => 'Appointments sorted successfully.']);
+        $this->dispatchBrowserEvent('updated', ['message' => 'Compromissos classificados com sucesso.']);
     }
 
     public function render()
@@ -111,8 +111,8 @@ class ListAppointments extends AdminComponent
     	$appointments = $this->appointments;
 
     	$appointmentsCount = Appointment::count();
-    	$scheduledAppointmentsCount = Appointment::where('status', 'scheduled')->count();
-    	$closedAppointmentsCount = Appointment::where('status', 'closed')->count();
+    	$scheduledAppointmentsCount = Appointment::where('status', Appointment::STATUS_SCHEDULED)->count();
+    	$closedAppointmentsCount = Appointment::where('status', Appointment::STATUS_CLOSED)->count();
 
         return view('livewire.admin.appointments.list-appointments', [
         	'appointments' => $appointments,

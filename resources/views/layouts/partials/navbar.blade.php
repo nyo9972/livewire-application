@@ -14,12 +14,12 @@
                 <span class="ml-1" x-ref="username">{{ auth()->user()->name }}</span>
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="{{ route('admin.profile.edit') }}" x-ref="profileLink">Profile</a>
-                <a class="dropdown-item" href="{{ route('admin.profile.edit') }}" x-ref="changePasswordLink">Change Password</a>
-                <a class="dropdown-item" href="{{ route('admin.settings') }}">Settings</a>
+                <a class="dropdown-item" href="{{ route('admin.profile.edit') }}" x-ref="profileLink">Perfil</a>
+                <a class="dropdown-item" href="{{ route('admin.profile.edit') }}" x-ref="changePasswordLink">Alterar senha</a>
+                <a class="dropdown-item" href="{{ route('admin.settings') }}">Configurações</a>
                 <div class="dropdown-divider"></div>
                 <form method="POST" action="{{ route('logout') }}">
-                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();">Logout</a>
+                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();">Sair</a>
                 </form>
             </div>
         </li>

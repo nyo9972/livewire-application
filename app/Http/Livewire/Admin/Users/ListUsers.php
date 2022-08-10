@@ -43,7 +43,7 @@ class ListUsers extends AdminComponent
 
 		$user->update(['role' => $role]);
 
-		$this->dispatchBrowserEvent('updated', ['message' => "Role changed to {$role} successfully."]);
+		$this->dispatchBrowserEvent('updated', ['message' => "Função alterada para {$role} com sucesso."]);
 	}
 
 	public function addNew()
@@ -71,9 +71,7 @@ class ListUsers extends AdminComponent
 
 		User::create($validatedData);
 
-		// session()->flash('message', 'User added successfully!');
-
-		$this->dispatchBrowserEvent('hide-form', ['message' => 'User added successfully!']);
+		$this->dispatchBrowserEvent('hide-form', ['message' => 'Usuário adicionado com sucesso!']);
 	}
 
 	public function edit(User $user)
@@ -108,7 +106,7 @@ class ListUsers extends AdminComponent
 
 		$this->user->update($validatedData);
 
-		$this->dispatchBrowserEvent('hide-form', ['message' => 'User updated successfully!']);
+		$this->dispatchBrowserEvent('hide-form', ['message' => 'Usuário atualizado com sucesso!']);
 	}
 
 	public function confirmUserRemoval($userId)
@@ -124,7 +122,7 @@ class ListUsers extends AdminComponent
 
 		$user->delete();
 
-		$this->dispatchBrowserEvent('hide-delete-modal', ['message' => 'User deleted successfully!']);
+		$this->dispatchBrowserEvent('hide-delete-modal', ['message' => 'Usuário excluído com sucesso!']);
 	}
 
     public function sortBy($columnName)

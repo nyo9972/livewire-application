@@ -32,7 +32,7 @@ class UpdateProfile extends Component
 
         Storage::disk('avatars')->delete($previousPath);
 
-        $this->dispatchBrowserEvent('updated', ['message' => 'Profile changed successfully!']);
+        $this->dispatchBrowserEvent('updated', ['message' => 'Perfil alterado com sucesso!']);
     }
 
     public function updateProfile(UpdatesUserProfileInformation $updater)
@@ -44,7 +44,7 @@ class UpdateProfile extends Component
 
         $this->emit('nameChanged', auth()->user()->name);
 
-        $this->dispatchBrowserEvent('updated', ['message' => 'Profile updated successfully!']);
+        $this->dispatchBrowserEvent('updated', ['message' => 'Perfil atualizado com sucesso!']);
     }
 
     public function changePassword(UpdatesUserPasswords $updater)
@@ -56,7 +56,7 @@ class UpdateProfile extends Component
 
         collect($attributes)->map(fn ($value, $key) => $this->state[$key] = '');
 
-        $this->dispatchBrowserEvent('updated', ['message' => 'Password changed successfully!']);
+        $this->dispatchBrowserEvent('updated', ['message' => 'Senha alterada com sucesso!']);
     }
 
     public function render()

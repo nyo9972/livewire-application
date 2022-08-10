@@ -4,12 +4,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Settings</h1>
+                    <h1>Configurações</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Settings</li>
+                        <li class="breadcrumb-item active">Configurações</li>
                     </ol>
                 </div>
             </div>
@@ -24,32 +24,32 @@
                     <!-- general form elements -->
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">General Setting</h3>
+                            <h3 class="card-title">Configurações gerais</h3>
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
                         <form wire:submit.prevent="updateSetting">
                             <div class="card-body">
                                 <div class="form-group">
-                                    <label for="siteName">Site Name</label>
-                                    <input wire:model.defer="state.site_name" type="text" class="form-control" id="siteName" placeholder="Enter site name">
+                                    <label for="siteName">Nome do site</label>
+                                    <input wire:model.defer="state.site_name" type="text" class="form-control" id="siteName" placeholder="Digite o nome do site">
                                 </div>
                                 <div class="form-group">
-                                    <label for="siteEmail">Site Email</label>
-                                    <input wire:model.defer="state.site_email" type="email" class="form-control" id="siteEmail" placeholder="Enter site email">
+                                    <label for="siteEmail">Email do site</label>
+                                    <input wire:model.defer="state.site_email" type="email" class="form-control" id="siteEmail" placeholder="Digite o email do site">
                                 </div>
                                 <div class="form-group">
-                                    <label for="siteTitle">Site Title</label>
-                                    <input wire:model.defer="state.site_title" type="text" class="form-control" id="siteTitle" placeholder="Enter site title">
+                                    <label for="siteTitle">Titulo do site</label>
+                                    <input wire:model.defer="state.site_title" type="text" class="form-control" id="siteTitle" placeholder="Digite o titulo do site">
                                 </div>
                                 <div class="form-group">
-                                    <label for="footerText">Footer Text</label>
-                                    <input wire:model.defer="state.footer_text" type="text" class="form-control" id="footerText" placeholder="Enter footer text">
+                                    <label for="footerText">exto do rodapé</label>
+                                    <input wire:model.defer="state.footer_text" type="text" class="form-control" id="footerText" placeholder="Digite o texto do rodapé">
                                 </div>
                                 <div class="form-group">
                                     <div class="custom-control custom-switch">
                                         <input wire:model.defer="state.sidebar_collapse" type="checkbox" class="custom-control-input" id="sidebarCollapse">
-                                        <label class="custom-control-label" for="sidebarCollapse">Sidebar Collapse</label>
+                                        <label class="custom-control-label" for="sidebarCollapse">Recolhimento da barra lateral</label>
                                     </div>
                                     <!-- <label for="sidebar_collapse">Sidebar Collapse</label><br>
                                     <input wire:model.defer="state.sidebar_collapse" type="checkbox" id="sidebar_collapse"> -->
@@ -58,7 +58,7 @@
                             <!-- /.card-body -->
 
                             <div class="card-footer">
-                                <button type="submit" class="btn btn-primary"><i class="fa fa-save mr-1"></i>Save changes</button>
+                                <button type="submit" class="btn btn-primary"><i class="fa fa-save mr-1"></i>Salvar alterações</button>
                             </div>
                         </form>
                     </div>

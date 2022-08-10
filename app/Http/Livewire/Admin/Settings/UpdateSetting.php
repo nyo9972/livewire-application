@@ -31,7 +31,7 @@ class UpdateSetting extends Component
 
         Cache::forget('setting');
 
-        $this->dispatchBrowserEvent('updated', ['message' => 'Settings updated successfully!']);
+        $this->dispatchBrowserEvent('updated', ['message' => 'Configurações atualizadas com sucesso!']);
     }
 
     public function render()

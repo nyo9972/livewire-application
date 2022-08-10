@@ -10,8 +10,8 @@ class Appointment extends Model
 {
     use HasFactory;
 
-    const STATUS_SCHEDULED = 'scheduled';
-    const STATUS_CLOSED = 'closed';
+    const STATUS_SCHEDULED = 'AGENDADO';
+    const STATUS_CLOSED = 'FECHADO';
 
     protected $guarded = [];
 

@@ -4,12 +4,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Profile</h1>
+                    <h1>Perfil</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">User Profile</li>
+                        <li class="breadcrumb-item active">Perfil de usuário</li>
                     </ol>
                 </div>
             </div>
@@ -39,7 +39,7 @@
 
                             <h3 class="profile-username text-center">{{ auth()->user()->name }}</h3>
 
-                            <p class="text-muted text-center">Admin</p>
+                            <p class="text-muted text-center">Administrador</p>
                         </div>
                         <!-- /.card-body -->
                     </div>
@@ -50,9 +50,9 @@
                     <div class="card" x-data="{ currentTab: $persist('profile') }">
                         <div class="card-header p-2">
                             <ul class="nav nav-pills" wire:ignore>
-                                <li @click.prevent="currentTab = 'profile'" class="nav-item"><a class="nav-link" :class="currentTab === 'profile' ? 'active' : ''" href="#profile" data-toggle="tab"><i class="fa fa-user mr-1"></i> Edit Profile</a></li>
-                                <li @click.prevent="currentTab = 'changePassword'" class="nav-item"><a class="nav-link" :class="currentTab === 'changePassword' ? 'active' : ''" href="#changePassword" data-toggle="tab"><i class="fa fa-key mr-1"></i> Change
-                                        Password</a></li>
+                                <li @click.prevent="currentTab = 'profile'" class="nav-item"><a class="nav-link" :class="currentTab === 'profile' ? 'active' : ''" href="#profile" data-toggle="tab"><i class="fa fa-user mr-1"></i> Editar perfil</a></li>
+                                <li @click.prevent="currentTab = 'changePassword'" class="nav-item"><a class="nav-link" :class="currentTab === 'changePassword' ? 'active' : ''" href="#changePassword" data-toggle="tab"><i class="fa fa-key mr-1"></i> Alterar
+                                        Senha</a></li>
                             </ul>
                         </div><!-- /.card-header -->
                         <div class="card-body">
@@ -60,9 +60,9 @@
                                 <div class="tab-pane" :class="currentTab === 'profile' ? 'active' : ''" id="profile" wire:ignore.self>
                                     <form wire:submit.prevent="updateProfile" class="form-horizontal">
                                         <div class="form-group row">
-                                            <label for="inputName" class="col-sm-2 col-form-label">Name</label>
+                                            <label for="inputName" class="col-sm-2 col-form-label">Nome</label>
                                             <div class="col-sm-10">
-                                                <input wire:model.defer="state.name" type="text" class="form-control @error('name') is-invalid @enderror" id="inputName" placeholder="Name">
+                                                <input wire:model.defer="state.name" type="text" class="form-control @error('name') is-invalid @enderror" id="inputName" placeholder="Nome">
                                                 @error('name')
                                                 <div class="invalid-feedback">
                                                     {{ $message}}
@@ -83,7 +83,7 @@
                                         </div>
                                         <div class="form-group row">
                                             <div class="offset-sm-2 col-sm-10">
-                                                <button type="submit" class="btn btn-success"><i class="fa fa-save mr-1"></i> Save Changes</button>
+                                                <button type="submit" class="btn btn-success"><i class="fa fa-save mr-1"></i> Salvar alterações</button>
                                             </div>
                                         </div>
                                     </form>
@@ -92,10 +92,9 @@
                                 <div class="tab-pane" :class="currentTab === 'changePassword' ? 'active' : ''" id="changePassword" wire:ignore.self>
                                     <form wire:submit.prevent="changePassword" class="form-horizontal">
                                         <div class="form-group row">
-                                            <label for="currentPassword" class="col-sm-3 col-form-label">Current
-                                                Password</label>
+                                            <label for="currentPassword" class="col-sm-3 col-form-label">Senha atual</label>
                                             <div class="col-sm-9">
-                                                <input wire:model.defer="state.current_password" type="password" class="form-control @error('current_password') is-invalid @enderror" id="currentPassword" placeholder="Current Password">
+                                                <input wire:model.defer="state.current_password" type="password" class="form-control @error('current_password') is-invalid @enderror" id="currentPassword" placeholder="Senha atual">
                                                 @error('current_password')
                                                 <div class="invalid-feedback">
                                                     {{ $message}}
@@ -104,10 +103,9 @@
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label for="newPassword" class="col-sm-3 col-form-label">New
-                                                Password</label>
+                                            <label for="newPassword" class="col-sm-3 col-form-label">Nova senha</label>
                                             <div class="col-sm-9">
-                                                <input wire:model.defer="state.password" type="password" class="form-control @error('password') is-invalid @enderror" id="newPassword" placeholder="New Password">
+                                                <input wire:model.defer="state.password" type="password" class="form-control @error('password') is-invalid @enderror" id="newPassword" placeholder="Nova senha">
                                                 @error('password')
                                                 <div class="invalid-feedback">
                                                     {{ $message}}
@@ -116,10 +114,9 @@
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label for="passwordConfirmation" class="col-sm-3 col-form-label">Confirm
-                                                New Password</label>
+                                            <label for="passwordConfirmation" class="col-sm-3 col-form-label">Confirmar senha</label>
                                             <div class="col-sm-9">
-                                                <input wire:model.defer="state.password_confirmation" type="password" class="form-control @error('password_confirmation') is-invalid @enderror" id="passwordConfirmation" placeholder="Confirm New Password">
+                                                <input wire:model.defer="state.password_confirmation" type="password" class="form-control @error('password_confirmation') is-invalid @enderror" id="passwordConfirmation" placeholder="Confirme sua senha">
                                                 @error('password_confirmation')
                                                 <div class="invalid-feedback">
                                                     {{ $message}}
@@ -129,7 +126,7 @@
                                         </div>
                                         <div class="form-group row">
                                             <div class="offset-sm-3 col-sm-9">
-                                                <button type="submit" class="btn btn-success"><i class="fa fa-save mr-1"></i> Save Changes</button>
+                                                <button type="submit" class="btn btn-success"><i class="fa fa-save mr-1"></i> Salvar alterações</button>
                                             </div>
                                         </div>
                                     </form>

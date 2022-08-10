@@ -8,6 +8,7 @@ use Livewire\Component;
 
 class ListConversationAndMessages extends Component
 {
+
     public $body;
 
     public $selectedConversation;

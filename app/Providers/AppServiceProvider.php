@@ -24,6 +24,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        setlocale(LC_TIME, 'pt_BR', 'pt_BR.utf-8', 'pt_BR.utf-8', 'portuguese');
+        date_default_timezone_set('America/Sao_Paulo');
+
         Carbon::macro('toFormattedDate', function () {
             return $this->format('Y-m-d');
         });
@@ -31,5 +34,8 @@ class AppServiceProvider extends ServiceProvider
         Carbon::macro('toFormattedTime', function () {
             return $this->format('h:i A');
         });
+
+        \Carbon\Carbon::setLocale($this->app->getLocale());
+
     }
 }

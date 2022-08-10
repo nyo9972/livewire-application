@@ -29,15 +29,15 @@ class UpdateAppointmentForm extends Component
 				'date' => 'required',
 				'time' => 'required',
 				'note' => 'nullable',
-				'status' => 'required|in:SCHEDULED,CLOSED',
+                'status' => 'required|in:AGENDADO,FECHADO',
 			],
 			[
-				'client_id.required' => 'The client field is required.'
+				'client_id.required' => 'O campo cliente é obrigatório.'
 			])->validate();
 
 		$this->appointment->update($this->state);
 
-		$this->dispatchBrowserEvent('alert', ['message' => 'Appointment updated successfully!']);
+		$this->dispatchBrowserEvent('alert', ['message' => 'Compromisso atualizado com sucesso!']);
 	}
 
     public function render()

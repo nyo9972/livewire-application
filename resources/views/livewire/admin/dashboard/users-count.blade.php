@@ -8,20 +8,20 @@
                     <x-animations.ballbeat />
                 </div>
                 <select wire:change="getUsersCount($event.target.value)" style="height: 2rem; outline: 2px solid transparent;" class="px-1 rounded border-0">
-                    <option value="TODAY">Today</option>
-                    <option value="30">30 days</option>
-                    <option value="60">60 days</option>
-                    <option value="360">360 days</option>
-                    <option value="MTD">Month to Date</option>
-                    <option value="YTD">Year to Date</option>
+                    <option value="TODAY">Hoje</option>
+                    <option value="30">30 dias</option>
+                    <option value="60">60 dias</option>
+                    <option value="360">360 dias</option>
+                    <option value="MTD">Do mês até a data</option>
+                    <option value="YTD">Do ano até a data</option>
                 </select>
             </div>
-            <p>Users</p>
+            <p>Usuários</p>
         </div>
         <div class="icon">
             <i class="ion ion-bag"></i>
         </div>
-        <a href="{{ route('admin.users') }}" class="small-box-footer">View Users <i class="fas fa-arrow-circle-right"></i></a>
+        <a href="{{ route('admin.users') }}" class="small-box-footer">Ver usuários <i class="fas fa-arrow-circle-right"></i></a>
     </div>
 </div>
 <!-- ./col -->

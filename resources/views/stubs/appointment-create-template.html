@@ -8,8 +8,8 @@
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-                        <li class="breadcrumb-item active"><a href="">Appointments</a></li>
-                        <li class="breadcrumb-item active">Create</li>
+                        <li class="breadcrumb-item active"><a href="">Compromissos</a></li>
+                        <li class="breadcrumb-item active">Criar</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -22,15 +22,15 @@
                     <form wire:submit.prevent="createAppointment">
                         <div class="card">
                             <div class="card-header">
-                                <h3 class="card-title">Add New Appointment</h3>
+                                <h3 class="card-title">Adicionar novo compromisso</h3>
                             </div>
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="client">Client:</label>
+                                            <label for="client">Cliente:</label>
                                             <select class="form-control" wire:model.defer="state.client_id">
-                                                <option value="">Select Client</option>
+                                                <option value="">Selecione o cliente</option>
                                             </select>
                                         </div>
                                     </div>
@@ -64,15 +64,15 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label for="note">Note:</label>
+                                            <label for="note">Nota:</label>
                                             <textarea class="form-control"></textarea>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="card-footer">
-                                <button type="button" class="btn btn-secondary"><i class="fa fa-times mr-1"></i> Cancel</button>
-                                <button type="submit" class="btn btn-primary"><i class="fa fa-save mr-1"></i> Save</button>
+                                <button type="button" class="btn btn-secondary"><i class="fa fa-times mr-1"></i> Cancelar</button>
+                                <button type="submit" class="btn btn-primary"><i class="fa fa-save mr-1"></i> Salvar</button>
                             </div>
                         </div>
                     </form>
